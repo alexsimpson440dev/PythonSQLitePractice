@@ -23,6 +23,7 @@ def main():
         queries.__init__(queries)
         queries.print_connection(queries)
         queries.select_all_one_condition(queries)
+        queries.select_column_one_condition(queries)
         queries.close_connection(queries)
 
 if __name__ == '__main__':

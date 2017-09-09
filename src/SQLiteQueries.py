@@ -16,11 +16,17 @@ class Queries():
         print('Connected to Database')
 
     def select_all_one_condition(self):
-        self.c.execute("SELECT * FROM Employees WHERE EmployeeID = '1'")
+        self.c.execute("SELECT * FROM Employees WHERE EmployeeID=?",(1,))
         self.select_results = self.c.fetchall()
         print('1):', self.select_results)
+
+    def select_column_one_condition(self):
+        self.c.execute("SELECT EmployeeName FROM Employees WHERE EmployeeID=?",(1,))
+        self.select_results = self.c.fetchall()
+        print('2):', self.select_results)
 
     def close_connection(self):
         # closes Connection
         self.conn.commit()
         self.conn.close()
+        print('Database Closed')
