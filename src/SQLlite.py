@@ -60,12 +60,14 @@ class SQL():
                 .format(ix=self.uniqueindex, tn=self.employees_table, cn=self.employeename_field))
         print('unique index added')
 
+    # drops the unique index
     def drop_unique(self):
         # Dropping the unique index
         # E.g., to avoid future conflicts with update/insert functions
         self.c.execute('DROP INDEX {ix}'.format(ix=self.uniqueindex))
         print('unique index dropped!')
 
+    # closes connection to the database
     def close_connection(self):
         try:
             self.conn.commit()
