@@ -16,7 +16,7 @@ class SQL():
         self.employeename_field = "EmployeeName"; self.TEXT = "TEXT"
         self.employeehire_field = "Hire Date" #uses type2
         self.employeejob = "Job Description" #uses type2
-        self.uniqueindex = "Unique Index"
+        self.uniqueindex = "unique_index"
 
     # connects to database
     def get_connection(self):
