@@ -40,7 +40,7 @@ class SQL():
         except sqlite3.OperationalError:
             print('Column already exists!')
     # inserts data into table
-    def insert_date(self):
+    def insert_data(self):
         try:
             self.c.execute("INSERT INTO {tn} ({c1}, {c2}) VALUES (1, 'Alexander Simpson')"\
                         .format(tn=self.employees_table, c1=self.employeeID_field, c2=self.employeename_field))
@@ -66,6 +66,17 @@ class SQL():
         # E.g., to avoid future conflicts with update/insert functions
         self.c.execute('DROP INDEX {ix}'.format(ix=self.uniqueindex))
         print('unique index dropped!')
+
+
+    # adding a date to table
+    def update_table_with_date(self):
+        try:
+            self.c.execute('ALTER TABLE {tn} ADD COLUMN {nc} {nf}'.format(tn=self.employees_table, nc=self.employeehire_field, nf=self.TEXT))
+            print('Added New Column: ' + self.employeehire_field + ' to Table: ' + self.employees_table)
+        except sqlite3.OperationalError:
+            print('Column already exists!')
+
+        self.c.execute("UPDATE Employees SET 'Hire' = (CURRENT_DATE) WHERE EmployeeID=?", (1,))
 
     # closes connection to the database
     def close_connection(self):

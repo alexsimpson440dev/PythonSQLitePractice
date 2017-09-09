@@ -12,10 +12,11 @@ def main():
         database.get_connection(database)
         database.add_new_table(database)
         database.add_new_column(database)
-        database.insert_date(database)
+        database.insert_data(database)
         database.update_data(database)
         database.add_unique_index(database)
         database.drop_unique(database)
+        database.update_table_with_date(database)
         database.close_connection(database)
 
     else:
