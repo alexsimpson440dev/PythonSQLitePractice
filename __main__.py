@@ -25,6 +25,8 @@ def main():
         queries.print_connection(queries)
         queries.select_all_one_condition(queries)
         queries.select_column_one_condition(queries)
+        queries.get_table_columns(queries)
+        queries.get_table_info(queries, print_out=True)
         queries.close_connection(queries)
 
 if __name__ == '__main__':

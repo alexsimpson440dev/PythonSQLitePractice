@@ -2,7 +2,7 @@ __author__ = 'Alex'
 import sqlite3
 class SQL():
     def __init__(self):
-        self.sqlite_file = 'F:\School\MCTC\Classes\Final Semester\Capstone\Week3 - SQLite\my_db.sqlite'
+        self.sqlite_file = 'my_db.sqlite'
         # self.sqlite_file = 'C:\School\MCTC\Final Semester\Capstone\Week3 - SQLite\PythonSQLitePractice\my_db.sqlite'
         try:
             self.conn = sqlite3.connect(self.sqlite_file)
